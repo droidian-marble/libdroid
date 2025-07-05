@@ -1,0 +1,84 @@
+libdroid 0.2.1-marble UNRELEASED; urgency=medium
+
+  [ Halhadus ]
+  * Created changelog
+  * Vibra fixed for marble
+
+  [ Eugenio Paolantonio (g7) ]
+  * [libdroid] Initial release.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [ci] Add circelci configs.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [leds] Add DroidLedsKind and droid_leds_is_kind_supported()
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Release 0.0.2.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [tools] backlight: add new option --info.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [leds] set_backlight: use FLASH_TYPE_NONE.
+    FLASH_TYPE_HARDWARE was wrong in the first place and some
+    HALs might not like it.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [leds] Add an alternate way to pass backlight info to the HAL.
+    Some buggy HALs expect use a different way to set the brightness,
+    and they do it by passing the actual value directly.
+    Enable this by setting the "backlight-max-alternate" gsetting
+    to a value > 0 (the actual max_value supported by your panel).
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Release 0.0.3.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [include] Move Light HAL specific stuff to libdroid-shared/leds-objects.h.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Allow implementing Android HALs.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [hals] Add a generic Light HAL.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [leds] hidl: try the libdroid slot first.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [leds] Switch hidl and aidl backends order.
+    The libdroid generic HAL is HIDL, and we should prefer that
+    if running.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Release 0.1.0.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [hals] common: utils: add droid_utils_file_exists.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [hals] lights: only check for file existence when looking at available lights.
+    There might be some race conditions with Android init scripts (or port-specific
+    stuff) where the HAL might start before the backlight panel node permissions
+    have been adjusted.
+    Assume we can write to the node if it exists, if we can't, we will catch
+    the error anyway while actually trying to write there - so all good.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [hals] lights: set Restart=on-abnormal.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Release 0.1.1.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [hals] lights: add /sys/class/backlight/panel0-backlight to the list of known paths.
+    Previously known as "fallback".
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [hals] lights: notifications: also check the result of the actual brightness change.
+    We were only checking the breath/blink result previously.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Release 0.1.2.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Release 0.1.3.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Add DroidVibra and relative backends.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [tools] Add libdroid-vibra-tool.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Move to GInitable.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Bump soname.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [packaging] Bump soname, refresh symbols.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+  * [libdroid] Bump version to 0.2.0.
+    Signed-off-by: Eugenio Paolantonio (g7) <me@medesimo.eu>
+
+  [ Deepak Kumar ]
+  * leds: use FLASH_TYPE_TIMED for notification LED.
+    Signed-off-by: Deepak Kumar <notwho53@gmail.com>
+
+ -- Halhadus <eneshakans45@proton.me>  Sat, 05 Jul 2025 09:24:52 +0300
