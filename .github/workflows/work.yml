@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: prepare
 
-    name: Publish linux-image
+    name: Publish libdroid
 
     steps:
       - name: Download artifacts
