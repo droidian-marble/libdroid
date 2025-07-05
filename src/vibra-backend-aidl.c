@@ -60,7 +60,7 @@
 
 #define BINDER_VIBRATOR_AIDL_IFACE "android.hardware.vibrator.IVibrator"
 #define BINDER_VIBRATOR_AIDL_CALLBACK_IFACE "android.hardware.vibrator.IVibratorCallback"
-#define BINDER_VIBRATOR_AIDL_SLOT "default"
+#define BINDER_VIBRATOR_AIDL_SLOT "vibratorfeature"
 
 /* Methods */
 enum

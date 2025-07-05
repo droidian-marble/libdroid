@@ -1,7 +1,7 @@
 Source: libdroid
 Section: libs
 Priority: optional
-Maintainer: Eugenio "g7" Paolantonio <eugenio@droidian.org>
+Maintainer: Halhadus <eneshakans45@proton.me>
 Build-Depends: debhelper-compat (= 13),
                meson,
                libglib2.0-dev,
